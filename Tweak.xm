@@ -9,7 +9,8 @@
         if([[device name] rangeOfString:@"Pebble"].location != NSNotFound){
             pebble = YES;
             NSLog(@"BATMAN");
-            if(pebble == YES /*&& device.length == 6*/){
+            NSString *deviceName = [device name];
+            if(pebble == YES && deviceName.length == 6){
                     //property length not found on object of type 'id'
                 BBBulletin *bulletin = [[BBBulletin alloc] init];
                 bulletin.bulletinID = @"com.getpebble.ios";
