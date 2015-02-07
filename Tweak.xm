@@ -1,5 +1,4 @@
 #import "Headers.h"
-#import <BulletinBoard/BBBulletin.h>
 #include <Springboard/SBBulletinBannerController.h>
 #import <BluetoothManager/BluetoothDevice.h>
 
@@ -11,13 +10,14 @@
             NSString *print = [NSString stringWithFormat:@"Now connected to %@", [device name], nil];
             pebble = YES;
             
-            if([device name].length == 11 && pebble == YES){
+            if([device name].length == 14 && pebble == YES){
                 BBBulletin *bulletin = [[BBBulletin alloc] init];
                 bulletin.bulletinID = @"com.getpebble.ios";
                 bulletin.sectionID = @"com.getpebble.ios";
+                bulletin.defaultAction = [BBAction actionWithLaunchBundleID:bulletin.sectionID];
                 bulletin.title = @"Pebble";
                 bulletin.message = print;
-                [(SBBulletinBannerController *)[%c(SBBulletinBannerController) sharedInstance] observer:nil addBulletin:bulletin forFeed:0];
+                [(SBBulletinBannerController *)[%c(SBBulletinBannerController) sharedInstance] observer:nil addBulletin:bulletin forFeed:2];
                 [bulletin release];
                 break;
             }
