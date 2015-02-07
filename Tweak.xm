@@ -14,6 +14,8 @@
                 BBBulletin *bulletin = [[BBBulletin alloc] init];
                 bulletin.bulletinID = @"com.getpebble.ios";
                 bulletin.sectionID = @"com.getpebble.ios";
+                //warning: class method '+actionWithLaunchBundleID:' not found (return type defaults to 'id') [-Wobjc-method-access]
+                //still works fine though
                 bulletin.defaultAction = [BBAction actionWithLaunchBundleID:bulletin.sectionID];
                 bulletin.title = @"Pebble";
                 bulletin.message = print;
