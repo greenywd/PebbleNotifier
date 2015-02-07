@@ -8,13 +8,9 @@
     BOOL pebble = NO;
     for (id device in [self connectedDevices]){
         if([[device name] rangeOfString:@"Pebble"].location != NSNotFound){
-            pebble = YES;
-            NSString *deviceName = [device name];
-            NSString *pebbleName;// =  stringWithFormat:@"%@"];
             NSString *print = [NSString stringWithFormat:@"Now connected to %@", [device name], nil];
-
-            pebbleName = [deviceName substringToIndex:7];
-
+            pebble = YES;
+            
             if([device name].length == 11 && pebble == YES){
                 BBBulletin *bulletin = [[BBBulletin alloc] init];
                 bulletin.bulletinID = @"com.getpebble.ios";
