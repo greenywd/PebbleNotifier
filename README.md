@@ -7,6 +7,6 @@ I don't want to, or need to know about the fact that notifications come up multi
 #How to Install?
 I don't recommend installing in it's current state because of bugs that I've mentioned above, but if curiosity gets the better of you or you just want it, here's multiple ways of doing so.
 
-*1.*
+**1.**
 
 
